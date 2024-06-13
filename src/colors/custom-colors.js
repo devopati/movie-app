@@ -4,4 +4,5 @@ export const custoomColors = {
   p_white: "#F2F2F2",
   white_variant: "#E6E6E6",
   p_grey: "#686868",
+  p_dark_grey: "#1C1C1C",
 };

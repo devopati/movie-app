@@ -6,9 +6,12 @@ import { TextInput } from "react-native-gesture-handler";
 import PrimaryButton from "../../components/PrimaryButton";
 import { bottomTabs } from "../../constants/screen-names";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { setIsLoggedIn } from "../../redux/slices/appSlice";
 
 const Username = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   return (
     <SafeAreaView style={styles.wrapper}>
@@ -39,7 +42,7 @@ const Username = () => {
         <PrimaryButton
           text="Done"
           textstyle={{ fontSize: 18, fontWeight: 600 }}
-          onPress={() => navigation.navigate(bottomTabs.HOME)}
+          onPress={() => dispatch(setIsLoggedIn(true))}
         />
       </View>
     </SafeAreaView>
