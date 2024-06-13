@@ -1,11 +1,13 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import AuthStack from "./AuthStack";
+import MainStack from "./MainStack";
 
 const RootNavigation = () => {
+  const isLoggedIn = true;
   return (
     <NavigationContainer>
-      <AuthStack />
+      {isLoggedIn ? <MainStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };

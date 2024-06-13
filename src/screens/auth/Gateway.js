@@ -7,6 +7,7 @@ import { Entypo } from "@expo/vector-icons";
 import LanguageBottomSheet from "./components/LanguageBottomSheet";
 import { useNavigation } from "@react-navigation/native";
 import { authScreens } from "../../constants/screen-names";
+import PrimaryButton from "../../components/PrimaryButton";
 
 const Gateway = () => {
   const navigation = useNavigation();
@@ -99,25 +100,16 @@ const Gateway = () => {
             alignSelf: "center",
           }}
         >
-          <TouchableOpacity style={styles.button}>
-            <Text style={{ fontWeight: "600" }}>Sign in</Text>
-          </TouchableOpacity>
+         <PrimaryButton text={"Sign in"} onPress={() => navigation.navigate(authScreens.LOGIN)}/>
 
-          <TouchableOpacity
-            onPress={() => navigation.navigate(authScreens.REGISTER)}
-            style={[
-              styles.button,
-              {
+         <PrimaryButton text={"Sign Up"}  onPress={() => navigation.navigate(authScreens.REGISTER)} contstyle={{
                 backgroundColor: custoomColors.p_black,
                 borderColor: custoomColors.p_white,
                 borderWidth: 1,
-              },
-            ]}
-          >
-            <Text style={{ color: custoomColors.p_white, fontWeight: "600" }}>
-              Sign up
-            </Text>
-          </TouchableOpacity>
+              }}
+              textstyle={{ color: custoomColors.p_white, fontWeight: "600" }}/>
+
+      
 
           <View>
             <Text
@@ -164,7 +156,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: Dimensions.get("window").width - 60,
-    height: 350,
+    height: 300,
     alignSelf: "center",
   },
   middlecont: {
