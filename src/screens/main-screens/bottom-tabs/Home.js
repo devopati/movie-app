@@ -6,6 +6,8 @@ import { ScrollView, TextInput } from "react-native-gesture-handler";
 import { Feather, Entypo } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 import CommingSoon from "../components/CommingSoon";
+import SeeAll from "../components/SeeAll";
+import { ServerContainer } from "@react-navigation/native";
 
 const Home = () => {
   return (
@@ -84,6 +86,15 @@ const Home = () => {
         </View>
 
         <CommingSoon />
+        <SeeAll initial={"Promo&Discount"} />
+        <View style={styles.service}>
+          <Image
+            style={styles.Simage}
+            source={require("../../../../assets/Group.png")}
+          />
+        </View>
+        <SeeAll initial={"Service"} />
+        <ServerContainer />
       </ScrollView>
     </SafeAreaView>
   );
@@ -135,5 +146,14 @@ const styles = StyleSheet.create({
   ratetext: {
     color: custoomColors.p_white,
     fontWeight: "500",
+  },
+  service: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  Simage: {
+    paddingTop: 0,
+    width: 440,
+    borderRadius: 20,
   },
 });
